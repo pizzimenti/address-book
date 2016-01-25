@@ -1,0 +1,30 @@
+Behavior our program should handle      Input example     Output example
+
+a year that is NOT a leap year          1993              false
+
+a year that is divisible by 4           2004              true
+
+a year that is divisible by 100         1900              false
+
+a year that is divisible by 400         2000              true
+
+
+
+always start with the condition that fails all. this will be the final 'else' statement
+
+in 'specs.js' add the code for the first spec in which you write a description of the behavior
+the second argument is the final function that asserts what we expect to happen
+at this point, we do not know HOW this is going to work yet.   This the RED code.
+
+Launch Spec Runner HTML
+See that it fails because there is not evaluation code
+
+
+in 'scripts.js' add the code for evaluating whether or not it is satisfied
+this should only be a single line of code to get a true eval that we 'assert' by simply making it go
+
+Refresh HTML
+
+Commit
+
+create next spec in specs.js...
