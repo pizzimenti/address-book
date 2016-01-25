@@ -1,3 +1,5 @@
-var leapYear = function(year) {
-  return false;
+function Contact (firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.addressData = [];
 }
