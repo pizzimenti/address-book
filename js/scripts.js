@@ -8,7 +8,6 @@ Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
 
-
 $(document).ready(function() {
   $("form#new-contact").submit(function(event) {
     event.preventDefault();
@@ -17,11 +16,16 @@ $(document).ready(function() {
     var inputtedLastName = $("input#new-last-name").val();
     var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
-console.log(inputtedLastName);
-console.log(newContact);
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
+
+    $(".contact").last().click(function() {
+      $("#contactInfo").show();
+      $("#contactInfo h2").text(newContact.fullName());
+      $(".first-name").text(newContact.firstName);
+      $(".last-name").text(newContact.lastName);
+    });
   });
 });

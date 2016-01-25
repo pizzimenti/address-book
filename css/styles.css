@@ -1,0 +1,12 @@
+#contactInfo {
+  display: none;
+}
+
+.contact {
+  cursor: crosshair;
+  color: #0088cc;
+}
+
+.contact:hover {
+  text-decoration: underline;
+}
