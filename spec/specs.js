@@ -19,4 +19,9 @@ describe("Address", function() {
     expect(testAddress.city).to.equal("Portland");
     expect(testAddress.state).to.equal("OR");
   });
+
+  it("adds the fullAddress metho to all addresses", function() {
+    var testAddress = new Address("123 Main St", "Portland", "OR");
+    expect(testAddress.fullAddress()).to.equal("123 Main St, Portland, OR");
+  });
 });
