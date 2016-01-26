@@ -18,7 +18,13 @@ Address.prototype.fullAddress = function() {
   return this.street + ", " + this.city + ", " + this.state;
 }
 
-
+function resetFields() {
+      $("input#new-first-name").val("");
+      $("input#new-last-name").val("");
+      $("input.new-street").val("");
+      $("input.new-city").val("");
+      $("input.new-state").val("");
+}
 
 $(document).ready(function() {
 
@@ -56,8 +62,7 @@ $(document).ready(function() {
 
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
+    resetFields();
 
     $(".contact").last().click(function() {
       $("#contactInfo").show();
