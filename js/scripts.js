@@ -8,7 +8,8 @@ Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
 
-function Address(street, city, state) {
+function Address(addressType, street, city, state) {
+  this.addressType = addressType;
   this.street = street;
   this.city = city;
   this.state = state;
@@ -30,19 +31,28 @@ $(document).ready(function() {
 
   $("#add-address").click(function() {
     $("#new-addresses").append('<div class="new-address">' +
-                                 '<div class="form-group">' +
-                                   '<label for="new-street">Street</label>' +
-                                   '<input type="text" class="form-control new-street">' +
-                                 '</div>' +
-                                 '<div class="form-group">' +
-                                   '<label for="new-city">City</label>' +
-                                   '<input type="text" class="form-control new-city">' +
-                                 '</div>' +
-                                 '<div class="form-group">' +
-                                   '<label for="new-state">State</label>' +
-                                   '<input type="text" class="form-control new-state">' +
-                                 '</div>' +
-                               '</div>');
+
+                                '<div class ="form-group">' +
+                                  '<label for="address-type">Type</label>' +
+                                  '<select class="form-control">' +
+                                    '<option value="home">Home</option>' +
+                                    '<option value="work">Work</option>' +
+                                    '<option value="shipping">Shipping</option>' +
+                                  '</select>' +
+                                  '</div>' +
+                                  '<div class="form-group">' +
+                                    '<label for="new-street">Street</label>' +
+                                    '<input type="text" class="form-control new-street">' +
+                                  '</div>' +
+                                  '<div class="form-group">' +
+                                    '<label for="new-city">City</label>' +
+                                    '<input type="text" class="form-control new-city">' +
+                                  '</div>' +
+                                  '<div class="form-group">' +
+                                    '<label for="new-state">State</label>' +
+                                    '<input type="text" class="form-control new-state">' +
+                                  '</div>' +
+                                '</div>');
   });
 
   $("form#new-contact").submit(function(event) {
@@ -65,7 +75,7 @@ $(document).ready(function() {
     resetFields();
 
     $(".contact").last().click(function() {
-      $("#contactInfo").show();
+      $("#contactInfo").fadeIn(800);
       $("#contactInfo h2").text(newContact.fullName());
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
